@@ -1,0 +1,41 @@
+package com.cgi.training.serializer;
+
+import java.util.Map;
+
+import org.apache.kafka.common.serialization.Serializer;
+
+import com.cgi.training.domain.Employee;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class EmployeeJsonSerializer implements Serializer<Employee>{
+
+	@Override
+	public void configure(Map<String, ?> configs, boolean isKey) {
+		
+	}
+
+	@Override
+	public byte[] serialize(String topic, Employee data) {
+		byte[] array=null;
+		ObjectMapper mapper=new ObjectMapper();
+		String jsonString="";
+		try {
+			jsonString=mapper.writeValueAsString(data);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		System.out.println("converted to "+jsonString);
+		return jsonString.getBytes();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see org.apache.kafka.common.serialization.Serializer#close()
+	 */
+	@Override
+	public void close() {
+		
+	}
+
+}

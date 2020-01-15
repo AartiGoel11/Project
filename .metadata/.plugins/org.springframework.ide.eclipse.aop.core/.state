@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringBoot-mongodb"/>
+<aop-project name="K2-accrual-extract"/>
+<aop-project name="Herokuproject-1"/>
+<aop-project name="Application"/>
+<aop-project name="FirstSpringProject"/>
+</aop-reference-model>

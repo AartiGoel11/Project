@@ -1,0 +1,15 @@
+package test;
+
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class ExampleCollection {
+
+	public static void main(String[] args) {
+		
+		Iterable<String> itr = Arrays.asList("Aarti","Golu","Papa","Mummy");
+		
+
+	}
+
+}

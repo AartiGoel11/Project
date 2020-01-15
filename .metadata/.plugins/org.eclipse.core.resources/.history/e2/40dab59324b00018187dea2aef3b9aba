@@ -1,0 +1,12 @@
+package test;
+
+public class String1 {
+
+	public static void main(java.lang.String[] args) {
+
+ String str = "abfv5djfh6743e348";
+ 
+ 
+	}
+
+}

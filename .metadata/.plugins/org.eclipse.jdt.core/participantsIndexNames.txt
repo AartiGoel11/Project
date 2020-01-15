@@ -1,0 +1,3 @@
+INDEX VERSION 1.130
+E:\STS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2807723341.index
+\AWSProject\src

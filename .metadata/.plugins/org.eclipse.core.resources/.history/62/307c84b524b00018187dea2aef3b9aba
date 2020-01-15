@@ -1,0 +1,20 @@
+package test;
+
+public class String1 {
+
+	public static void main(java.lang.String[] args) {
+
+ String str = "abfv5djfh6743e348";
+ 
+ 
+ for(int i=0;i<str.length();i++)
+ {
+	 if(Character.isDigit(str.charAt(i)))
+	 {
+		// System.out.println(Character.getNumericValue(str.charAt(i)));
+		 System.out.println(str.charAt(i));
+	 }
+ }
+	}
+
+}

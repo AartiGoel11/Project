@@ -1,0 +1,57 @@
+package com.project.hotel;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DbSeeder implements CommandLineRunner {
+	private HotelRepository hotelRepo;
+	
+	
+	
+	public DbSeeder(HotelRepository hotelRepo) {
+		super();
+		this.hotelRepo = hotelRepo;
+	}
+
+
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		Hotel marriot = new Hotel(
+				"Marriot",
+				130,
+				new Address("Paris","France"),
+				Arrays.asList(
+						new Review("John", 8, false),
+						new Review("Mary", 7, true)
+						));
+		
+		Hotel ibis = new Hotel(
+				"Ibis",
+				90,
+				new Address("Burcharest","Romania"),
+				Arrays.asList(
+						new Review("Teddy", 9, false)
+										));
+		
+		Hotel sofitel = new Hotel(
+				"Sofitel",
+				200,
+				new Address("Rome","Italy"),
+				new ArrayList<>());
+		
+		//drop all hotels
+		this.hotelRepo.deleteAll();
+		
+		List<Hotel> hotels = Arrays.asList(marriot,ibis,sofitel);
+		this.hotelRepo.insert(hotels);
+	}
+
+	
+}
